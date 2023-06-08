@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make QR</title>
+    <style>
+        body {
+            position: relative;
+            width: 1440px;
+            height: 1024px;
+
+            background: #9E9A9A;
+
+        }
+
+        .head {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 1519px;
+            height: 88px;
+            left: -8px;
+            top: -8px;
+            background-color: #3F3A3A;
+        }
+
+        .head-text {
+            font-weight: 400;
+            font-size: 40px;
+        }
+
+        .logo {
+            position: absolute;
+            width: 83px;
+            height: 62px;
+            left: 45px;
+            top: 124px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24px;
+
+            color: #FFFFFF;
+
+        }
+
+        .form-box {
+
+            position: absolute;
+            width: 1293px;
+            height: 690px;
+            left: 100px;
+            top: 335px;
+
+            background: rgba(0, 0, 0, 0.57);
+            box-shadow: inset -5px 5px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .form-text {
+
+            display: flex;
+            justify-content: center;
+            padding: 200px 200px;
+            color: #FFFFFF;
+            font-size: 2em;
+        }
+
+        /* form-box css start here */
+        .personal-information {
+            position: absolute;
+            width: 376px;
+            height: 39px;
+            left: 471px;
+            top: 35px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 39px;
+
+
+
+            color: #FFFFFF;
+
+        }
+
+
+        .name {
+            position: absolute;
+            width: 336px;
+            height: 48px;
+            left: 472px;
+            top: 100px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 29px;
+
+            color: #FFFFFF;
+
+        }
+
+        .email {
+            position: absolute;
+            width: 336px;
+            height: 48px;
+            left: 864px;
+            top: 100px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 29px;
+
+            color: #FFFFFF;
+
+        }
+
+        .age {
+            position: absolute;
+            width: 336px;
+            height: 48px;
+            left: 472px;
+            top: 200px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 29px;
+
+            color: #FFFFFF;
+
+        }
+
+        .name-input {
+            position: absolute;
+            width: 332px;
+            height: 25px;
+            left: 473px;
+            top: 130px;
+
+            background: #D9D9D9;
+        }
+
+        .email-input {
+            position: absolute;
+            width: 332px;
+            height: 25px;
+            left: 864px;
+            top: 130px;
+
+            background: #D9D9D9;
+        }
+
+        .age-input {
+            position: absolute;
+            width: 332px;
+            height: 25px;
+            left: 472px;
+            top: 233px;
+
+            background: #D9D9D9;
+        }
+
+        .vehicle {
+            position: absolute;
+            width: 336px;
+            height: 48px;
+            left: 472px;
+            top: 400px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 29px;
+
+            color: #FFFFFF;
+        }
+
+        .vehicle-input {
+            position: absolute;
+            width: 332px;
+            height: 25px;
+            left: 473px;
+            top: 430px;
+
+            background: #D9D9D9;
+        }
+
+        .licence {
+            position: absolute;
+            width: 336px;
+            height: 48px;
+            left: 864px;
+            top: 400px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 29px;
+            color: #FFFFFF;
+
+        }
+
+        .licence-input {
+            position: absolute;
+            width: 332px;
+            height: 25px;
+            left: 864px;
+            top: 430px;
+
+            background: #D9D9D9;
+        }
+
+        .insurance {
+            position: absolute;
+            width: 336px;
+            height: 48px;
+            left: 472px;
+            top: 500px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 29px;
+
+            color: #FFFFFF;
+        }
+
+        .insurance-input {
+            position: absolute;
+            width: 332px;
+            height: 25px;
+            left: 473px;
+            top: 530px;
+
+            background: #D9D9D9;
+        }
+
+        .vehicle-information {
+            position: absolute;
+            width: 376px;
+            height: 39px;
+            left: 471px;
+            top: 330px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 39px;
+
+
+
+            color: #FFFFFF;
+        }
+
+        .QR {
+            position: absolute;
+            width: 174px;
+            height: 46px;
+            left: 131px;
+            top: 135px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 29px;
+
+            color: #FFFFFF;
+        }
+
+        .submit-button {
+            position: absolute;
+            width: 443px;
+            height: 40px;
+            left: 550px;
+            top: 615px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+
+            background: #FFFFFF;
+            border-radius: 11px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- This is head -->
+    <div class="head">
+        <div class="head-text">
+            Company name
+        </div>
+    </div>
+
+    <!-- this is logo -->
+    <div class="logo">
+        company logo
+    </div>
+
+    <!-- fill this form -->
+    <div class="form-text">
+        Fill this form
+    </div>
+
+    <!-- This is form fill up box  -->
+    <div class="form-box">
+        <div class="personal-information">
+            Personal information
+        </div>
+        <!-- this is personal information form -->
+        <form action="">
+            <label for="name" class="name">Name:</label><br>
+            <input type="text" class="name-input" value="Enter your name">
+            <label for="email" class="email">Email:</label><br>
+            <input type="text" class="email-input" value="Enter your email">
+            <label for="age" class="age">Age:</label><br>
+            <input type="text" class="age-input" value="Enter your age">
+        </form>
+
+        <!-- this is vehical information form -->
+        <div class="vehicle-information">
+            Vehicle Information
+        </div>
+        <form action="">
+            <label for="vehicle" class="vehicle">Vehicle Type:</label><br>
+            <input type="text" class="vehicle-input" value="Enter your vehicle type">
+            <label for="licence" class="licence">Licence:</label><br>
+            <input type="text" class="licence-input" value="Enter RIG NO.">
+            <label for="insurance" class="insurance">Insurance:</label><br>
+            <input type="text" class="insurance-input" value="Enter Insurance RIG NO.">
+            <input type="submit" class="submit-button">
+        </form>
+
+        <!-- this is about QR inside form box -->
+        <div class="QR">
+
+            About QR
+
+        </div>
+    </div>
+
+</body>
+
+</html>
